@@ -1,0 +1,49 @@
+<div class="container">
+  <header><span class="lblPreview">Header</span></header>
+  <aside class="sidebar-l"><span class="lblPreview">Left Sidebar</span></aside>
+  <main><span class="lblPreview">Main Content Area</span></main>
+  <footer><span class="lblPreview">Footer</span></footer>
+</div>
+.container {
+  display: grid;
+  min-height: 100vh;
+  gap: 10px;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 80px 1fr 80px;
+  grid-template-areas: 
+    "hd hd"
+    "sd-l main"
+    "ft ft";
+  min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "hd"
+      "sd-l"
+      "main"
+      "ft";
+  }
+}
+
+header { grid-area: hd; background: #3498db; padding: 10px; }
+main { grid-area: main; background: #ffffff; padding: 10px; }
+.sidebar-l { grid-area: sd-l; background: #f4f4f4; padding: 10px; }
+footer { grid-area: ft; background: #333333; padding: 10px; }
+<HTML>
+  <HEAD>
+    <link rel="stylesheet" href="grid-style.css">
+    <script type="module" src="https://js.arcgis.com/5.1/"></script>
+  </HEAD>
+  <BODY>
+    <DIV class="container">
+      <header><span class="lblPreview">Header</span></header>
+      <aside class="sidebar-1"><span class="lblPreview">Left Sidebar</span></aside>
+      <main><span class="lblPreview">Main Content Area</span></main>
+      <footer><span class="lblPreview">Footer</span></footer>
+    </DIV>
+  </BODY>
+</HTML>
